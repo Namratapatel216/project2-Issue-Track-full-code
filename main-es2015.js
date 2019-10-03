@@ -4787,13 +4787,6 @@ let SignUpComponent = class SignUpComponent {
             if (apiresponse['status'] == 200) {
                 jquery__WEBPACK_IMPORTED_MODULE_6__('#loader').hide(0);
                 this.toastr.warning(apiresponse['message']);
-                this.cookie.set('Issue_Track_AuthToken', apiresponse['data']['authToken']);
-                this.cookie.set('Issue_Track_UserId', apiresponse['data']['userDetails']['userId']);
-                this.cookie.set('Issue_Track_UserName', apiresponse['data']['userDetails']['userName']);
-                this.cookie.set('Issue_Track_provider_pic', apiresponse['data']['userDetails']['provider_pic']);
-                this.cookie.set('Issue_Track_socialPlatform', apiresponse['data']['userDetails']['socialPlatform']);
-                this.cookie.set('Issue_Track_email', apiresponse['data']['userDetails']['email']);
-                this.user_service.setUserInfoLocalStorage(apiresponse['data']['userDetails']);
                 this._router.navigate(['/Login']);
             }
             else {
