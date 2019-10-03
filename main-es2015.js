@@ -3042,10 +3042,10 @@ __webpack_require__.r(__webpack_exports__);
 let SocketService = class SocketService {
     constructor(_http) {
         this._http = _http;
-        this.baseUrl = "http://api.npatelproject.site";
-        this.IssueUrl = "http://api.npatelproject.site/api/v1/Issues";
-        this.USerUrl = "http://api.npatelproject.site/api/v1/users";
-        this.commentUrl = "http://api.npatelproject.site/api/v1/Comments";
+        this.baseUrl = "https://api.npatelproject.site";
+        this.IssueUrl = "https://api.npatelproject.site/api/v1/Issues";
+        this.USerUrl = "https://api.npatelproject.site/api/v1/users";
+        this.commentUrl = "https://api.npatelproject.site/api/v1/Comments";
         this.create_issue = (create_issue_data) => {
             this.socket.emit("create-issue", create_issue_data);
         };
@@ -3159,7 +3159,7 @@ let SocketService = class SocketService {
                 }); // end Socket
             }); // end Observable
         };
-        this.notificationUrl = 'http://api.npatelproject.site/api/v1/Notifications';
+        this.notificationUrl = 'https://api.npatelproject.site/api/v1/Notifications';
         this.get_Notification = () => {
             let response = this._http.get(`${this.notificationUrl}/get-all-notification`);
             return response;
@@ -3167,7 +3167,7 @@ let SocketService = class SocketService {
         this.update_notification = (updated_notification_data) => {
             this.socket.emit('update-notification', updated_notification_data);
         };
-        this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_3__["connect"]('http://api.npatelproject.site', { transports: ['websocket'], secure: true });
+        this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_3__["connect"]('https://api.npatelproject.site', { transports: ['websocket'], secure: true });
     }
 };
 SocketService.ctorParameters = () => [
@@ -3203,7 +3203,7 @@ __webpack_require__.r(__webpack_exports__);
 let UserServiceService = class UserServiceService {
     constructor(_http) {
         this._http = _http;
-        this.baseUrl = "http://api.npatelproject.site/api/v1/users";
+        this.baseUrl = "https://api.npatelproject.site/api/v1/users";
         this.setUserInfoLocalStorage = (data) => {
             localStorage.setItem('Issue_Track_userInfo', JSON.stringify(data));
         };
